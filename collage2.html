@@ -28,6 +28,24 @@
       .row > div {
         flex: 1px;
       }
+
+      /* responsive media query */
+      @media screen and (max-width: 576px){
+        .row{
+            flex-direction: column;
+            height: auto;
+        }
+        .row3{
+            grid-template-columns: 1fr;
+        }
+      }
+
+      @media screen and (min-width: 576px) and (max-width: 992px){
+        .row{
+            flex-direction: column;
+            height: auto;
+        }
+      }
     </style>
   </head>
   <body>
