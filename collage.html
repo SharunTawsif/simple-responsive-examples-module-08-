@@ -8,12 +8,14 @@
         img{
             height: 100%;
             width: 100%;
+            
         }
         .row{
-            height: 300px;
+            height: 200px;
             display: flex;
             gap: 5px;
             margin-bottom: 5px;
+            
         }
         .row2{
             display: flex;
@@ -21,16 +23,35 @@
             gap: 5px;
             /* calc function diye amra proper height ta dite parsi..eita chara gap align hbe na thik moto */
             height: calc((100% - 5px) / 2);
+            
         }
         .row3{
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 5px;
+           
         }
         /* etar mane holo row er moddhe joto child div ase shobaike same size er kore dis */
         .row > div{
             flex: 1;
+          
         }
+       
+
+        /* responsive for mobile */
+        @media screen and (max-width: 753px) {
+            .row2, .row{
+                flex-direction: column;
+                height: auto;
+            }
+            .row3{
+                grid-template-columns:repeat(1,  1fr);
+                height: 100%;
+            }
+        }
+
+    
+        
     </style>
 </head>
 <body>
