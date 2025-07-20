@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Area Layout</title>
+
+    <style>
+        .header, .nav, .main, .sidebar, .advertise, .footer{
+            background-color: antiquewhite;
+            border: 1px solid tomato;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        /* grid area er ekta kore naam diye dilam..eita amra pore just naam dhorei kaaj korte parbo */
+        .header{
+            grid-area: header;
+        }
+        .nav{
+            grid-area: nav;
+        }
+        .main{
+            grid-area: main;
+        }
+        .sidebar{
+            grid-area: sidebar;
+        }
+        .advertise{
+            grid-area: advertise;
+        }
+        .footer{
+            grid-area: footer;
+        }
+        /* shob gula class er je naam disilam sheita grid-template-area use kore boshay disi jmne dorkar oivabe */
+        .container{
+            display: grid;
+            grid-template-areas: 
+            "header   header    header  header"
+            "nav      main      main    sidebar"
+            "nav      main      main    advertise"
+            "footer   footer    footer  footer"
+            ;
+            padding: 10px;
+            gap: 20px;
+        }
+
+        /* for phone */
+        @media screen and (max-width: 576px) {
+            .container{
+                grid-template-areas: 
+                "header"
+                "nav"
+                "main"
+                "sidebar"
+                "advertise"
+                "footer"
+                ;
+            }
+        }
+
+        /* for tab */
+        @media screen and (min-width: 576px) and (max-width: 992px) {
+            .container{
+                grid-template-areas: 
+                "header header"
+                "nav nav"
+                "sidebar main"
+                "advertise footer"
+                ;
+            }
+            
+        }
+    </style>
+</head>
+<body class="container">
+
+
+    <header class="header">
+        The Header
+    </header>
+
+
+
+    <nav class="nav">
+        <ul>
+            <li><a href="">Nav 1</a></li>
+            <li><a href="">Nav 2</a></li>
+            <li><a href="">Nav 3</a></li>
+        </ul>
+    </nav>
+
+
+    <main class="main">
+        <article>
+            <h3>Main Article 1</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea doloribus ipsam fugiat dolores soluta? Voluptates dolor ut quod, blanditiis accusamus deleniti, sint facere, at impedit modi quasi consectetur recusandae architecto.</p>
+        </article>
+        <article>
+            <h3>Main Article 2</h3>
+            <p>A ea totam excepturi blanditiis vero atque exercitationem, ipsam velit consequatur earum asperiores magnam deleniti animi perspiciatis nisi repellat fuga? Velit ex similique impedit fuga facere! Porro amet eligendi ratione?</p>
+        </article>
+    </main>
+
+    <aside>
+        <div class="sidebar">
+            <h4>Sidebar</h4>
+        </div>
+        <div class="advertise">
+            <h4>Advertise</h4>
+        </div>
+    </aside>
+
+    <footer class="footer">
+        <h3>The footer</h3>
+    </footer>
+
+</body>
+</html>
